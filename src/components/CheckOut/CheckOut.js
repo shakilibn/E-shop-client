@@ -1,24 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App';
 import './CheckOut.css'
 
 const CheckOut = () => {
-    const {productId} = useParams();
+    const { productId } = useParams();
     const [product, setProduct] = useState({});
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`https://safe-sierra-55799.herokuapp.com/product/${productId}`)
-        .then(res => res.json())
-        .then(data => setProduct(data))
-    },[productId])
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [productId])
 
-    const {name, price, weight} = product;
+    const { name, price, weight } = product;
 
     const handleCheckOut = () => {
-        const orderDetails = {...loggedInUser, product, orderTime:new Date()};
+        const orderDetails = { ...loggedInUser, product, orderTime: new Date() };
 
         fetch('https://safe-sierra-55799.herokuapp.com/addOrder', {
             method: 'POST',
@@ -27,22 +27,43 @@ const CheckOut = () => {
             },
             body: JSON.stringify(orderDetails)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data){
-                alert('checked out successfully');
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('checked out successfully');
+                }
+            })
     }
 
     return (
-        <div className="checkOut-area">
-            <h3>CheckOut</h3>
-            <p>Product name : {name}</p>
-            <p>Product price : {price}</p>
-            <p>Product weight : {name}</p>
-            <p>Product Quantity : 1</p>
-            <Button onClick={handleCheckOut}>CheckOut</Button>
+        <div className="checkout-container">
+            <div className="checkout-area">
+                
+                <h3 className=" mt-3 mb-5">CheckOut</h3>
+
+                <Table striped hover size="sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">{name}</td>
+                            <td>{price}</td>
+                            <td>{weight}</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </Table>
+
+                <div className="checkout-btn">
+                    <Button className="mt-3" onClick={handleCheckOut}>CheckOut</Button>
+                </div>
+            </div>
         </div>
     );
 };

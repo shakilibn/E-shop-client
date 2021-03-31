@@ -5,20 +5,22 @@ import './Admin.css'
 import AddProduct from '../AddProduct/AddProduct';
 import { useState } from 'react';
 import ManageProduct from '../ManageProduct/ManageProduct';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faTasks } from '@fortawesome/free-solid-svg-icons'
 
 const Admin = () => {
-    const [toggle, setToggle] = useState(1);
+    const [toggle, setToggle] = useState(true);
  
     return (
-        <div className="row mt-2">
+        <div className="row mt-2 admin-container">
             <div className="col-md-2 side-bar">
-                <Button onClick={() => setToggle(2)} variant="primary" block>Manage Product</Button>
-                <Button onClick={() => setToggle(1)} variant="primary" block>Add Product</Button>
+                <Button onClick={() => setToggle(false)} className="mt-3 mb-3" variant="primary" block><FontAwesomeIcon icon={faTasks} /> Manage Product</Button>
+                <Button onClick={() => setToggle(true)} variant="primary" block><FontAwesomeIcon icon={faPlus} /> Add Product</Button>
             </div>
             <div className="col-md-8">
-                <h4>Add Product</h4>
+                <h4 className="mb-4">Add Product</h4>
                 {
-                    toggle === 1 ? <AddProduct /> : <ManageProduct />
+                    toggle ? <AddProduct /> : <ManageProduct />
                 }                
             </div>
         </div>

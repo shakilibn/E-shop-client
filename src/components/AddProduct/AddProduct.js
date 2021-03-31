@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
+import './AddProduct.css';
 
 const AddProduct = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -46,18 +47,18 @@ const AddProduct = () => {
     return (
         <div className="">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="name">Product Name : </label>
-                <input name="name" id="name" ref={register} placeholder="product name" /><br />
+                <label htmlFor="name">Product Name </label>
+                <input className="form-control" name="name" id="name" ref={register} placeholder="product name" /><br />
 
-                <label htmlFor="weight">Product Weight : </label>
-                <input name="weight" id="weight" ref={register} placeholder="product weight" /><br />
+                <label htmlFor="weight">Product Weight </label>
+                <input className="form-control" name="weight" id="weight" ref={register} placeholder="product weight" /><br />
 
-                <label htmlFor="price">Product Price : </label>
-                <input name="price" id="price" ref={register} placeholder="product price" /><br />
+                <label htmlFor="price">Product Price </label>
+                <input className="form-control" name="price" id="price" ref={register} placeholder="product price" /><br />
 
-                <input name="uploadedFile" type="file" onChange={handleImageUpload} ref={register} /><br />
+                <input className="mb-3" name="uploadedFile" type="file" onChange={handleImageUpload} ref={register} /><br />
 
-                <input type="submit" />
+                <input className="submit-btn bg-primary" type="submit" />
             </form>
         </div>
     );

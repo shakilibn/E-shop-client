@@ -18,6 +18,7 @@ import Orders from './components/Orders/Orders';
 import Admin from './components/Admin/Admin';
 import Deals from './components/Deals/Deals';
 import CheckOut from './components/CheckOut/CheckOut';
+import Footer from './components/Footer/Footer';
 
 export const UserContext = createContext();
 
@@ -64,6 +65,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </UserContext.Provider>
   );
