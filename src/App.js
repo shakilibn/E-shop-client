@@ -1,24 +1,71 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './components/Home/Home';
+import NotFound from './components/NotFound/NotFound';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login/Login';
+import { useState } from 'react';
+import { createContext } from 'react';
+import Header from './components/Header/Header';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ProductDetails from './components/ProductDetails/ProductDetails';
+import Orders from './components/Orders/Orders';
+import Admin from './components/Admin/Admin';
+import Deals from './components/Deals/Deals';
+import CheckOut from './components/CheckOut/CheckOut';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({
+    isSignedIn:false,
+    name:'',
+    email:''
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="/home">
+            <Home />
+          </Route>
+
+          <PrivateRoute path="/product/:productId">
+            <CheckOut />           
+          </PrivateRoute>
+          
+          <PrivateRoute path="/orders">
+            <Orders />           
+          </PrivateRoute>
+
+          <Route path="/admin">
+            <Admin />           
+          </Route>
+
+          <PrivateRoute path="/deals">
+            <Deals />           
+          </PrivateRoute>
+
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route  path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

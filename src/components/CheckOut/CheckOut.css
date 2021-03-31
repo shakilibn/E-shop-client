@@ -1,0 +1,8 @@
+.checkOut-area{
+    border:1px solid limegreen;
+    border-radius:5px;
+    width:350px;
+    margin:100px;
+    padding:20px;
+    box-shadow: 4px 4px 6px lightgray;;
+}
