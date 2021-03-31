@@ -45,7 +45,8 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="">
+        <div>
+            <h4 className="mb-4">Add Product</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="name">Product Name </label>
                 <input className="form-control" name="name" id="name" ref={register} placeholder="product name" /><br />

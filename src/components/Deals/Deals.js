@@ -2,8 +2,8 @@ import React from 'react';
 
 const Deals = () => {
     return (
-        <div>
-            <h3>this is deals</h3>
+        <div style={{minHeight:'800px'}}>
+            <h3>Deals are coming soon...!</h3>
         </div>
     );
 };

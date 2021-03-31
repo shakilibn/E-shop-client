@@ -32,6 +32,7 @@ const ManageProduct = () => {
 
     return (
         <div>
+            <h4 className="mb-4">Manage Product</h4>
             {
                 loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :
                 <Table striped hover size="sm">

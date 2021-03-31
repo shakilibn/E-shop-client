@@ -18,7 +18,6 @@ const Admin = () => {
                 <Button onClick={() => setToggle(true)} variant="primary" block><FontAwesomeIcon icon={faPlus} /> Add Product</Button>
             </div>
             <div className="col-md-8">
-                <h4 className="mb-4">Add Product</h4>
                 {
                     toggle ? <AddProduct /> : <ManageProduct />
                 }                

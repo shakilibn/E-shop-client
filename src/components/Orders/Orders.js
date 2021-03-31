@@ -3,6 +3,7 @@ import { UserContext } from '../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { Spinner, Table } from 'react-bootstrap';
+import './Order.css'
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -19,7 +20,7 @@ const Orders = () => {
     }, [])
 
     return (
-        <>
+        <div className="orders-container">
             {
                 loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :
                 <>
@@ -59,7 +60,7 @@ const Orders = () => {
                     </Table>
                 </>
             }
-        </>
+        </div>
     );
 };
 
