@@ -15,5 +15,6 @@ I have used **React, React Routing, Node, Mongodb, Bootstrap and HTML-CSS** in t
 for Authentication , i have used google firebase, which is really awesome ;
 for Database, i have used **mongodb** database;
 
-Live Site : [E-Shop](https://full-stack-e-shop.web.app/)
+Live Site : [E-Shop](https://full-stack-e-shop.web.app/);
+
 Live Link : [https://full-stack-e-shop.web.app/]
