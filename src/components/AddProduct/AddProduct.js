@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import './AddProduct.css';
 
 const AddProduct = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, watch, errors  } = useForm();
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = data => {
@@ -26,7 +26,8 @@ const AddProduct = () => {
             },
             body: JSON.stringify(productInfo)
         })
-        .then(res => console.log("server side response"))
+        .then(res => console.log("server side response"));
+        alert('Item added successfully');
     };
 
     const handleImageUpload = event => {
@@ -45,7 +46,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div>
+        <div className="form-area">
             <h4 className="mb-4">Add Product</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="name">Product Name </label>
@@ -59,7 +60,9 @@ const AddProduct = () => {
 
                 <input className="mb-3" name="uploadedFile" type="file" onChange={handleImageUpload} ref={register} /><br />
 
-                <input className="submit-btn bg-primary" type="submit" />
+                <div className="d-flex justify-content-end">
+                    <input className="submit-btn" type="submit" />
+                </div>
             </form>
         </div>
     );

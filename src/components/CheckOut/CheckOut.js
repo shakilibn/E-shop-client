@@ -61,7 +61,7 @@ const CheckOut = () => {
                 </Table>
 
                 <div className="checkout-btn">
-                    <Button className="mt-3" onClick={handleCheckOut}>CheckOut</Button>
+                    <Button className="mt-3 color-btn" onClick={handleCheckOut}>CheckOut</Button>
                 </div>
             </div>
         </div>

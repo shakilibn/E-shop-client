@@ -8,8 +8,8 @@ const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     return (
         <div>
-            <Navbar className="d-flex justify-content-between menu-bar" bg="primary" variant="dark" expand="lg">
-                <Navbar.Brand as={Link} to="/home"><strong>e-shop</strong></Navbar.Brand>
+            <Navbar className="d-flex justify-content-between menu-bar" variant="dark" expand="lg">
+                <Navbar.Brand as={Link} to="/home"><strong>E-Shop</strong></Navbar.Brand>
                 <div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

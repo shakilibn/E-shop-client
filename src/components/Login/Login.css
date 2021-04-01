@@ -1,10 +1,17 @@
+body {
+    background-color: #f9f3f3;
+}
 .login-area {
     width:350px;
-    border:1px solid gray;
     border-radius: 5px;
     margin:10%;
     padding:10px;
     text-align:center;
     height: 400px;
-
+    background-color:white;
+    color:#282846;
+    box-shadow: 4px 4px 10px lightgrey;
+}
+.color-btn {
+    background-color: #282846;
 }

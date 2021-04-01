@@ -14,8 +14,8 @@ const Admin = () => {
     return (
         <div className="row mt-2 admin-container">
             <div className="col-md-2 side-bar">
-                <Button onClick={() => setToggle(false)} className="mt-3 mb-3" variant="primary" block><FontAwesomeIcon icon={faTasks} /> Manage Product</Button>
-                <Button onClick={() => setToggle(true)} variant="primary" block><FontAwesomeIcon icon={faPlus} /> Add Product</Button>
+                <Button onClick={() => setToggle(false)} className="mt-3 mb-3 color-btn" variant="primary" block><FontAwesomeIcon icon={faTasks} /> Manage Product</Button>
+                <Button onClick={() => setToggle(true)} variant="primary" className="color-btn" block><FontAwesomeIcon icon={faPlus} /> Add Product</Button>
             </div>
             <div className="col-md-8">
                 {

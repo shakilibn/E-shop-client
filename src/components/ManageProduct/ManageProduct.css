@@ -1,10 +1,6 @@
-.orders-container{
-    min-height: 800px;
-}
-.order-area {
+.manage-area {
     background-color: white;
     padding:10px;
     box-shadow: 4px 4px 10px lightgrey;
     border-radius: 5px;
-    margin:20px;
 }

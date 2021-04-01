@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
+import './ManageProduct.css'
 
 const ManageProduct = () => {
     const [products, setProducts] = useState([]);
@@ -31,7 +32,7 @@ const ManageProduct = () => {
     }
 
     return (
-        <div>
+        <div className="manage-area">
             <h4 className="mb-4">Manage Product</h4>
             {
                 loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :

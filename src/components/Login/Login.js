@@ -46,7 +46,9 @@ const Login = () => {
         <div className="d-flex justify-content-center">
             <div className="login-area ">
                 <h2 className="mb-5">Login</h2>
-                <Button onClick={handleGoogleSignIn} variant="primary">Continue with Google</Button>
+                <input type="text" className="form-control mb-3" placeholder="username"/>
+                <input type="text" className="form-control mb-5" placeholder="password"/>
+                <Button onClick={handleGoogleSignIn} className="color-btn">Continue with Google</Button>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Product.css';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -14,8 +15,8 @@ const Product = (props) => {
                     <Card.Body>
                         <Card.Title className="text-center">{name}</Card.Title>
                         <div className="d-flex justify-content-between">
-                            <h2 className="d-inline">${price}</h2>
-                            <Button as={Link} to={`product/${_id}`} className="d-inline" variant="primary">Buy Now</Button>
+                            <h2 className="d-inline text-color">${price}</h2>
+                            <Button as={Link} to={`product/${_id}`} className="d-inline color-btn">Buy Now</Button>
                         </div>
                     </Card.Body>
                 </Card>

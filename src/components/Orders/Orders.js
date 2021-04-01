@@ -21,45 +21,47 @@ const Orders = () => {
 
     return (
         <div className="orders-container">
-            {
-                loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :
-                <>
-                    {
-                        (orders.length) &&
-                        <div className="mt-3 mb-5 d-flex flex-wrap justify-content-between">
-                            <div className="">
-                                <h3>Your Orders</h3>
-                            </div>
-                            <div className="">
-                                <h6>User Name : {orders[0].name}</h6>
-                                <h6>User Email : {orders[0].email}</h6>
-                            </div>
-                        </div>
-                    }
-                    <Table striped hover size="sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Weight</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Order Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            <div className="order-area mt-3 p-3">
+                {
+                    loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :
+                        <>
                             {
-                                orders.map(order => <tr>
-                                    <td>{order.product.name}</td>
-                                    <td>{order.product.weight}</td>
-                                    <td>1</td>
-                                    <td>{order.product.price}</td>
-                                    <td>{(new Date(order.orderTime)).toDateString('dd/MM/YYYY')}</td>
-                                </tr>)
+                                (orders.length) &&
+                                <div className="mt-3 mb-5 d-flex flex-wrap justify-content-between">
+                                    <div className="">
+                                        <h3>Your Orders</h3>
+                                    </div>
+                                    <div className="">
+                                        <h6>User Name : {orders[0].name}</h6>
+                                        <h6>User Email : {orders[0].email}</h6>
+                                    </div>
+                                </div>
                             }
-                        </tbody>
-                    </Table>
-                </>
-            }
+                            <Table striped hover size="sm">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Weight</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Order Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        orders.map(order => <tr>
+                                            <td>{order.product.name}</td>
+                                            <td>{order.product.weight}</td>
+                                            <td>1</td>
+                                            <td>{order.product.price}</td>
+                                            <td>{(new Date(order.orderTime)).toDateString('dd/MM/YYYY')}</td>
+                                        </tr>)
+                                    }
+                                </tbody>
+                            </Table>
+                        </>
+                }
+            </div>
         </div>
     );
 };

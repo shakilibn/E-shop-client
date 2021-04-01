@@ -19,12 +19,20 @@ const Home = () => {
     }, [products])
 
     return (
-        <div className="row">
-            {
-                loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :
-                products.map(product => <Product key={product._id} product={product}></Product>)
-            }
-        </div>
+        <>
+            <div className="introduction">
+                <h1 className="mb-3">E-Shop</h1>
+                <h5  className="mb-3">Largest Online Market Place</h5>
+                <p>Purchase your product from online and get within 24 hours</p>
+            </div>
+
+            <div className="row home-container">
+                {
+                    loading ? <Spinner className="loading-spinner" animation="border" variant="dark" /> :
+                        products.map(product => <Product key={product._id} product={product}></Product>)
+                }
+            </div>
+        </>
     );
 };
 
