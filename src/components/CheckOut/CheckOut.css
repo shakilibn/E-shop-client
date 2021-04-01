@@ -1,9 +1,9 @@
 .checkout-container{
     background-color:rgb(236, 235, 235);
     min-height: 800px;
+    padding-top:40px;
 }
 .checkout-area{
-    border:1px solid limegreen;
     background-color:white;
     border-radius:5px;
     width:80%;
